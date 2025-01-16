@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #456329;
+    color: white;
+    padding: 15px 20px;
+    z-index: 1000;
+}
+
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img{
+    height: 30px;
+}
+.navbar-links{
+    list-style-type: none;
+    display: flex;
+}
+.navbar-links li{
+    margin: 0 15px;
+}
+
+.navbar-links a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+    display: inline;
+    padding: 15px 10px;
+    border-radius: 25px;
+    transition: background-color .3s ease;
+    padding: 10px 15px;
+}
+.navbar-links a:hover{
+    background-color: #6cb12b;
+    /* padding: 5px; */
+}
+
+section {
+    padding-top: 70px;
+    margin-top: -70px; 
+}
+/* Main */
+.main-container{
+    display: flex;
+    /* margin-top: 60px; */
+    padding-top: 60px;
+}
+
+.left-menu{
+    width: 20%;
+    background-color: #456329;
+    padding: 20px;
+    display: block;
+    /* position: relative; */
+    /* position: fixed; */
+}
+
+/* .left-menu.collapsed {
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+} */
+
+.left-menu ul{
+    list-style-type: none;
+}
+.left-menu ul li{
+    padding: 10px 5px;
+    margin: 5px;
+    text-align: center;
+    border-radius: 25px;
+    transition: background-color .3s ease;
+}
+
+.left-menu ul li a {
+    text-decoration: none;
+    color: white;
+    /* border-radius: 25px;
+    transition: background-color .3s ease;*/
+    
+}
+.left-menu ul li:hover{
+    background-color: #6cb12b;
+}
+
+.left-toggle{
+    display: none;
+    /* position: absolute; */
+    height: 30px;
+    width: 30px;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #456329 ;
+    color: white;
+}
+
+.main-content{
+    flex: 1;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    width: 50%;
+}
+
+.right-panel{
+    width: 300px;
+    height: inherit;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+
+footer{
+    position: fixed;
+    width: 100%;
+    background-color: #456329;
+    color: white;
+    padding: 10px;
+    bottom: 0;
+    text-align: center;
+}
+
+.main-container, .main-content, .left-menu, .right-panel, .navbar, footer {
+    transition: transform 0.5s ease-in-out;
+    transform-origin: top left;
+}
+
+@media (max-width: 960px) {
+    .left-menu{
+        display: none;
+        
+    }
+    .left-toggle{
+        display: block;
+    }
+    .left-menu.collapsed{
+        display: block;
+        position: fixed;
+        z-index: 999;
+    }
+    .right-panel{
+        width: 40%;
+    }
+}
